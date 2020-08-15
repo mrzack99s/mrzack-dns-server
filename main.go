@@ -39,7 +39,6 @@ func main() {
 		log.Println(err)
 	}
 	defer f.Close()
-
 	log.SetOutput(f)
 
 	if err := srv.ListenAndServe(); err != nil {
