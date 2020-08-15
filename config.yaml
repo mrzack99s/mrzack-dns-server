@@ -1,0 +1,3 @@
+sconfig:
+    forwarderAddress: "8.8.8.8:53"
+    logPath: "./logFiles"
