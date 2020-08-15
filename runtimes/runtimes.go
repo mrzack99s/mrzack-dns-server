@@ -1,4 +1,4 @@
-package mrz_runtime
+package runtimes
 
 import (
 	"fmt"

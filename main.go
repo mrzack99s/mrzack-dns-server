@@ -9,7 +9,7 @@ import (
 
 	"github.com/miekg/dns"
 	"github.com/mrzack99s/mrzack-dns-server/configs"
-	"github.com/mrzack99s/mrzack-dns-server/mrz_runtime"
+	"github.com/mrzack99s/mrzack-dns-server/runtimes"
 )
 
 var domainsToAddresses map[string]string
@@ -19,7 +19,7 @@ var blockWords map[string][]string
 type handler struct{}
 
 func (this *handler) ServeDNS(w dns.ResponseWriter, r *dns.Msg) {
-	mrz_runtime.Run(w, r, domainsToAddresses, blockWords)
+	runtimes.Run(w, r, domainsToAddresses, blockWords)
 }
 
 func main() {
