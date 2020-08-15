@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mrzack-dns-server
+  labels:
+    app: mrzack-dns-server
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mrzack-dns-server
+  template:
+    metadata:
+      labels:
+        app: mrzack-dns-server
+    spec:
+      containers:
+      - name: mrzack-dns-server
+        image: mrzack/mrzack-dns-server:v1.0.0  
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 53
+            protocol: UDP

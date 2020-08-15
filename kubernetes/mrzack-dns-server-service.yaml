@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mrzack-dns-server
+  name: mrzack-dns-server
+  namespace: default
+
+spec:
+  loadBalancerIP: 10.254.0.14
+  ports:
+  - port: 53
+    protocol: UDP
+    targetPort: 53
+  selector:
+    app: mrzack-dns-server
+  type: LoadBalancer
